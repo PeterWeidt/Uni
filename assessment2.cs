@@ -1,4 +1,4 @@
-const int NUMBER_OF_ROWS = 9;
+ int NUMBER_OF_ROWS = 9;
 
             int[][] lottoNumbers ={
                              new int [] { 4, 7, 19, 23, 28, 36},
@@ -17,7 +17,6 @@ const int NUMBER_OF_ROWS = 9;
           winningNumbers(NUMBER_OF_ROWS, lottoNumbers, drawNumbers);
 
             ExitProgram();
-        }//end Main
 
         static int winningNumbers(int rows, int[][] lottoNumbers, int[] drawNumbers)
         {
@@ -32,18 +31,16 @@ const int NUMBER_OF_ROWS = 9;
             return test;
         }
 
-        static int[] suppNumbers(int[] drawNumbers)
+        static int suppNumbers(int[] drawNumbers)
         {
-            int one = 1;
-            int two = 2;
-            int[] Supplementary = new int[] {one,two};
-            int value = 0;
-            while (value < drawNumbers.Length)
-            {
-                Console.WriteLine(value);
-            }
-            return Supplementary;
-        }
+            SupplementaryOne = drawNumbers[6];
+	    SupplementaryTwo = drawNumbers[7];
+           Console.WriteLine(SupplementaryOne);
+	    return SupplementaryOne;
+	    return SupplementaryTwo;    
+	}
+
+Console.WriteLine(SupplementaryOne);
 
         static void ExitProgram() {
             Console.Write("\n\nPress any key to exit program: ");
