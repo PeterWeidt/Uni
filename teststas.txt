@@ -73,6 +73,7 @@ namespace Gold_Lotto_Checker
         }
 
 
+
         static void ExitProgram()
         {
             Console.Write("\n\nPress any key to exit program: ");
