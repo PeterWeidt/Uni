@@ -41,7 +41,7 @@ static void Main()
 
 
         static void displayNumbers(int[] drawNumbers){
-            Console.WriteLine("\n Numbers: ");
+            System.Console.Write("\nWinning: ");
             foreach (int number in drawNumbers) {
                 System.Console.Write(number + "\t");
             }
@@ -68,10 +68,7 @@ static void Main()
 			match++;
                 }
                 Console.WriteLine("\n" + match);
-		
             }
-
-
 	}
 
         static void ExitProgram()
