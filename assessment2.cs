@@ -1,4 +1,8 @@
- int NUMBER_OF_ROWS = 9;
+
+
+static void Main()
+        {
+            const int NUMBER_OF_ROWS =9;
 
             int[][] lottoNumbers ={
                              new int [] { 4, 7, 19, 23, 28, 36},
@@ -14,35 +18,68 @@
 
             int[] drawNumbers = new int[] { 44, 9, 17, 43, 26, 7, 28, 19 };
 
-          winningNumbers(NUMBER_OF_ROWS, lottoNumbers, drawNumbers);
+            displayGames(NUMBER_OF_ROWS, lottoNumbers);
+            displayNumbers(drawNumbers);
+	    getWinningNumbers(drawNumbers, lottoNumbers);
 
             ExitProgram();
+        }//end Main
 
-        static int winningNumbers(int rows, int[][] lottoNumbers, int[] drawNumbers)
+        static void displayGames(int maxcolumns, int[][] lottoNumbers)
         {
-            Console.WriteLine(rows);
-            int test = 0;
-            Console.WriteLine(lottoNumbers[1][1]);
-
-            while (rows >= -1)
+            for (int row = 0; row < maxcolumns; row++)
             {
-                rows--;
+                System.Console.Write("Game {0}: \t", row + 1);
+                for (int column = 0; column < lottoNumbers[row].Length; column++)
+                {
+                    System.Console.Write(lottoNumbers[row][column] + "\t");
+                }
+                Console.WriteLine();
             }
-            return test;
         }
 
-        static int suppNumbers(int[] drawNumbers)
+
+
+        static void displayNumbers(int[] drawNumbers){
+            Console.WriteLine("\n Numbers: ");
+            foreach (int number in drawNumbers) {
+                System.Console.Write(number + "\t");
+            }
+        }
+
+
+
+        static void getWinningNumbers(int[] drawNumbers, int[][] lottoNumbers)
         {
-            SupplementaryOne = drawNumbers[6];
-	    SupplementaryTwo = drawNumbers[7];
-           Console.WriteLine(SupplementaryOne);
-	    return SupplementaryOne;
-	    return SupplementaryTwo;    
+		int no1 = drawNumbers[0];
+		int no2 = drawNumbers[1];
+		int no3 = drawNumbers[3];
+		int no4	= drawNumbers[4];
+		int no5 = drawNumbers[5];
+		
+		int match = 0;
+		
+		for (int row = 0; row < 9; row++)
+            {
+                for (int column = 0; column < lottoNumbers[row].Length; column++)
+                {
+			if (no1 == lottoNumbers[row][column])
+			 System.Console.Write(no1 + "matches" + lottoNumbers[row][column]);
+			match++;
+                }
+                Console.WriteLine("\n" + match);
+		
+            }
+
+
 	}
 
-Console.WriteLine(SupplementaryOne);
-
-        static void ExitProgram() {
+        static void ExitProgram()
+        {
             Console.Write("\n\nPress any key to exit program: ");
             Console.ReadKey();
         }//end ExitProgram
+
+
+
+Main();
