@@ -57,7 +57,6 @@ namespace Gold_Lotto_Checker
 
         static void SearchTest(int maxcolumns, int[][] lottoNumbers, int[] drawNumbers)
         {
-            bool foundSwitch = false;
             for (int rows = 0; rows < maxcolumns; rows++)
             {
                 for (int columns = 0; columns < lottoNumbers[rows].Length; columns++)
@@ -66,15 +65,9 @@ namespace Gold_Lotto_Checker
                     {
                         if (lottoNumbers[rows][columns] == drawNumbers[j])
                         {
-                            foundSwitch = true;
-                            Console.WriteLine("game " + rows + " " + lottoNumbers[rows][columns] + " was a winning number");
+                            Console.WriteLine("game {0} ", rows+1 + " " + lottoNumbers[rows][columns] + " was a winning number");
                         }
                     }
-                    if (foundSwitch == false)
-                    {
-                        Console.WriteLine("game " + rows + " " +  lottoNumbers[rows][columns] + " not found in winners");
-                    }
-                    foundSwitch = false;
                 }
             }
         }
