@@ -61,7 +61,7 @@ namespace Gold_Lotto_Checker
             {
                 for (int columns = 0; columns < lottoNumbers[rows].Length; columns++)
                 {
-                    for (int j = 0; j < drawNumbers.Length; j++)
+                    for (int j = 0; j < drawNumbers.Length -2; j++)
                     {
                         if (lottoNumbers[rows][columns] == drawNumbers[j])
                         {
