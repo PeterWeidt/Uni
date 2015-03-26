@@ -67,12 +67,12 @@ namespace Gold_Lotto_Checker
                         if (lottoNumbers[rows][columns] == drawNumbers[j])
                         {
                             foundSwitch = true;
-                            Console.WriteLine("Array element" + lottoNumbers[rows] + "was a winning number");
+                            Console.WriteLine(rows + "game" + lottoNumbers[rows][columns] + " was a winning number");
                         }
                     }
                     if (foundSwitch == false)
                     {
-                        Console.WriteLine("Array test" + lottoNumbers[rows] + "not found in winners");
+                        Console.WriteLine(rows + "game " + lottoNumbers[rows][columns] + " not found in winners");
                     }
                     foundSwitch = false;
                 }
