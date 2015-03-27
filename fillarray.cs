@@ -54,27 +54,13 @@ namespace Gold_Lotto_Checker
         }// This method displays all numbers of the array in each game along with
         //all the numbers in the drawnumbers array.
 
-        static void FillArray(out int[] winning)
-        {
-            // Initialize the array:
-            winning = new int[5] { 1, 2, 3, 4, 5 };
-        }
-
-
-
-        static void getWinningNumber(int maxcolumns, int[][] lottoNumbers, int[] drawNumbers)
+        static int[] getWinningNumber(int maxcolumns, int[][] lottoNumbers, int[] drawNumbers)
         {
             int[] matches = new int[1];
 
-            foreach (int element in matches)
-            {
-                Console.WriteLine("LSDJKFSLDFKLJSDFLKSDD" + element);
-            }
-            Console.WriteLine();
-            
             for (int rows = 0; rows < maxcolumns; rows++)
             {
-                int match = 0; 
+                int match = 0;
                 System.Console.Write("\nGame {0}: ", rows + 1);
                 for (int columns = 0; columns < lottoNumbers[rows].Length; columns++)
                 {
@@ -84,14 +70,16 @@ namespace Gold_Lotto_Checker
                         {
                             match++;
                             int game = rows + 1;
-                            System.Console.Write(" "+match);
-                            //matches = new int [game]{match};
+                            System.Console.Write(" " + match);
+                            //matches[1] = 1;
+                            Console.WriteLine("RESULT ONE: " + matches[game]);
                             //Console.WriteLine("Writing stuff" + matches);
                             //return matches;
                         }
                     }
                 }
             }
+            return matches;
         }
 
 
