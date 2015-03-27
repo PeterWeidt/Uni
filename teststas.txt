@@ -29,8 +29,7 @@ namespace Gold_Lotto_Checker
             int[] drawNumbers = new int[] { 44, 9, 17, 43, 26, 7, 28, 19 };
 
             displayArray(NUMBER_OF_ROWS, lottoNumbers, drawNumbers);
-            //WinningNums(drawNumbers, lottoNumbers);
-            SearchTest(NUMBER_OF_ROWS, lottoNumbers, drawNumbers);
+            SearchTest(NUMBER_OF_ROWS, lottoNumbers, drawNumbers, drawNumbers);
             ExitProgram();
         }//end Main
 
@@ -46,32 +45,42 @@ namespace Gold_Lotto_Checker
                 }
                 Console.WriteLine();
             }
-            System.Console.Write("\nWinning numbers: ");
+            System.Console.Write("\n your lotto numbers are\n\n ");
             foreach (int element in drawNumbers)
             {
-                System.Console.Write("\t" + element);
+                System.Console.Write(element + "\t");
             }
         }// This method displays all numbers of the array in each game along with
         //all the numbers in the drawnumbers array.
 
 
-        static void SearchTest(int maxcolumns, int[][] lottoNumbers, int[] drawNumbers)
+        static void SearchTest(int maxcolumns, int[][] lottoNumbers, int[] winningNumbers, int[] SuppNumbers)
         {
             for (int rows = 0; rows < maxcolumns; rows++)
             {
+                int foundWin = 0;
+                int foundSupp = 0;
                 for (int columns = 0; columns < lottoNumbers[rows].Length; columns++)
                 {
-                    for (int j = 0; j < drawNumbers.Length -2; j++)
+                    for (int j = 0; j < winningNumbers.Length - 2; j++)
                     {
-                        if (lottoNumbers[rows][columns] == drawNumbers[j])
+                        if (lottoNumbers[rows][columns] == winningNumbers[j])
                         {
-                            Console.WriteLine("game {0} ", rows+1 + " " + lottoNumbers[rows][columns] + " was a winning number");
+                            foundWin++;                  
+                            //Console.WriteLine("\n"+ "Game: {0}", rows+1 + "\n" + "Winning Number: " + lottoNumbers[rows][columns]);
                         }
                     }
-                }
-            }
-        }
-
+                    for (int j = 6; j < SuppNumbers.Length; j++)
+                    {
+                        if (lottoNumbers[rows][columns] == SuppNumbers[j])
+                        {
+                            foundSupp++;
+                        }
+                    }
+                } Console.WriteLine("\n\nfound " + foundWin + " winning numbers and " + foundSupp + " supplementary numbers in Game {0}", rows + 1);
+            } 
+        } // This method finds numbers that match from drawNumbers and each new array in lottoNumbers
+       
 
 
         static void ExitProgram()
@@ -83,3 +92,4 @@ namespace Gold_Lotto_Checker
 
     } //end class Program
 }
+
